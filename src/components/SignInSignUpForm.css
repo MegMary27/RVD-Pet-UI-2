@@ -1,0 +1,51 @@
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .form-container h2 {
+    color: #6e2594;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+  form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  form button {
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  form button:hover {
+    background-color: #6e2594;
+  }
+  
+  form p {
+    margin: 10px 0 0;
+    font-size: 0.9em;
+  }
+  
+  form p a {
+    color: #6e2594;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
