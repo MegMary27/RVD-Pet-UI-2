@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import './Hero.css';
 
 function Hero() {
@@ -7,9 +8,10 @@ function Hero() {
       <div className="container">
         <h1>Welcome to RVD Pet Clinic</h1>
         <p>Sharing Pet Care with Compassion</p>
-        <a href="#appointment">
+        {/* Use Link to navigate to the Make Appointment page */}
+        <Link to="/appointment">
           <button>Book an Appointment</button>
-        </a>
+        </Link>
       </div>
     </section>
   );

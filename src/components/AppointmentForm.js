@@ -5,7 +5,15 @@ function AppointmentForm() {
   return (
     <section id="appointment">
       <div className="container">
-        <h2>Make an Appointment</h2>
+      <h2>Make an Appointment</h2>
+        {/* New text added above the title */}
+        
+        <p>
+          To save appointment details and to receive appointment reminders, please{' '}
+          <a href="/signin" className="signin-link">sign in</a>.
+        </p>
+
+        
         <div className="form-container">
           <form>
             <label>Your Name:</label>

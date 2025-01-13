@@ -1,17 +1,32 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav style={{ display: 'flex', justifyContent: 'space-around', backgroundColor: '#f8f9fa', padding: '10px' }}>
-      <a href="#home">Home</a>
-      <a href="#signin">Sign In</a>
-      <a href="#about">About Us</a>
-      <a href="#appointment">Make Appointment</a>
-      <a href="#services">Services</a>
-      <a href="#food">Food & Accessories</a>
-      <a href="#location">Location & Hours</a>
+    <nav style={navStyle}>
+      <Link to="/" style={linkStyle}>Home</Link>
+      <Link to="/signin" style={linkStyle}>Sign In</Link>
+      <Link to="/about" style={linkStyle}>About Us</Link>
+      <Link to="/appointment" style={linkStyle}>Make Appointment</Link>
+      <Link to="/services" style={linkStyle}>Services</Link>
+      <Link to="/food" style={linkStyle}>Food & Accessories</Link>
+      <Link to="/location" style={linkStyle}>Location & Hours</Link>
     </nav>
   );
 }
+
+const navStyle = {
+  display: 'flex',
+  justifyContent: 'space-around',
+  backgroundColor: '#f8f9fa',
+  padding: '10px',
+};
+
+const linkStyle = {
+  color: '#6a0dad', // Purple color for the navbar text
+  textDecoration: 'none',
+  fontFamily: "'Arial', sans-serif",
+  fontWeight: 'bold',
+};
 
 export default Navbar;

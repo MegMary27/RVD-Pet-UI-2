@@ -1,5 +1,5 @@
 .hero {
-    background: url('../assets/dog.png') center/cover no-repeat;
+    background: url('../assets/animals.webp') center/cover no-repeat;
     color: white;
     text-align: center;
     padding: 150px 20px;
@@ -8,12 +8,13 @@
   .hero h1 {
     font-size: 3.5em;
     margin: 0 0 20px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-  }
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7); /* Increased shadow size and opacity */
+}
   
   .hero p {
     font-size: 1.5em;
     margin-bottom: 20px;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.7);
   }
   
   .hero button {
