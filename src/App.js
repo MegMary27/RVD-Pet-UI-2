@@ -9,9 +9,9 @@ import About from './components/About';
 import AppointmentForm from './components/AppointmentForm';
 import Services from './components/Services';
 import FoodAndAccessories from './components/FoodAndAccessories';
-import Location from './components/Location';
 import Footer from './components/Footer';
 import UserDetails from './components/UserDetails'; // Import the new UserDetails component
+import UserDashboard from './components/UserDashboard'; // Import the UserDashboard component
 
 function App() {
   return (
@@ -26,8 +26,8 @@ function App() {
           <Route path="/appointment" element={<AppointmentForm />} />
           <Route path="/services" element={<Services />} />
           <Route path="/food" element={<FoodAndAccessories />} />
-          <Route path="/location" element={<Location />} />
-          <Route path="/user-details" element={<UserDetails />} /> {/* Add UserDetails route */}
+          <Route path="/user-details" element={<UserDetails />} />
+          <Route path="/dashboard" element={<UserDashboard />} /> {/* Add UserDashboard route */}
         </Routes>
         <Footer />
       </div>

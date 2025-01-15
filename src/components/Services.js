@@ -1,11 +1,6 @@
 import React from 'react';
 import './Services.css';
 
-// Import images from the assets folder
-import checkupImage from '../assets/checkup.jpg';
-import vaccinationImage from '../assets/vaccinations.jpg';
-import surgeryImage from '../assets/surgery.png';
-
 function Services() {
   return (
     <section id="services">
@@ -13,19 +8,88 @@ function Services() {
         <h2>Our Services</h2>
         <div className="grid">
           <div className="card">
-            <img src={checkupImage} alt="Check-ups" className="service-image" />
-            <h3>Check-ups</h3>
-            <p>Comprehensive health check-ups for your pets.</p>
+            <div className="icon">🩺</div>
+            <h3>Pet Consultation</h3>
+            <p>
+            Comprehensive health check-ups for your pets.
+            </p>
           </div>
           <div className="card">
-            <img src={vaccinationImage} alt="Vaccinations" className="service-image" />
-            <h3>Vaccinations</h3>
-            <p>Keep your pets healthy with regular vaccines.</p>
+            <div className="icon">💉</div>
+            <h3>Pet Vaccination</h3>
+            <p>
+            Keep your pets healthy with regular vaccines.
+            </p>
           </div>
           <div className="card">
-            <img src={surgeryImage} alt="Surgery" className="service-image" />
-            <h3>Surgery</h3>
-            <p>Expert surgical care with utmost safety.</p>
+            <div className="icon">🩹</div>
+            <h3>Pet Surgery</h3>
+            <p>
+            Expert surgical care with utmost safety.
+            </p>
+          </div>
+          <div className="card">
+            <div className="icon">℞</div>
+            <h3>Pet Pharmacy</h3>
+            <p>
+            Keep your pets healthy with regular medicines.
+            </p>
+          </div>
+          <div className="card">
+            <div className="icon">🪮</div>
+            <h3>Pet Grooming</h3>
+            <p>
+            Keep your pets looking good.
+            </p>
+          </div>
+          <div className="card">
+            <div className="icon">🛒</div>
+            <h3>Pet Foods and Accessories</h3>
+            <p>
+            Food.
+            </p>
+          </div>
+          <div className="card">
+            <div className="icon">𓅃</div>
+            <h3>Birds and Exotic Animal Consultation</h3>
+            <p>
+            Fancy pets.
+            </p>
+          </div>
+          <div className="card">
+            <div className="icon">🫧</div>
+            <h3>Pet Parlour</h3>
+            <p>
+            Parlour.
+            </p>
+          </div>
+          <div className="card">
+            <div className="icon">👩🏻‍⚕️</div>
+            <h3>Dermatology</h3>
+            <p>
+            Skin Care.
+            </p>
+          </div>
+          <div className="card">
+            <div className="icon">🔬</div>
+            <h3>Laboratory Examination & Diagnostic</h3>
+            <p>
+            Blood Test.
+            </p>
+          </div>
+          <div className="card">
+            <div className="icon">👨🏻‍💻</div>
+            <h3>Microchipping</h3>
+            <p>
+            For ease of Tracking and Pet identification.
+            </p>
+          </div>
+          <div className="card">
+            <div className="icon">📝</div>
+            <h3>Health and Travel Certificate</h3>
+            <p>
+            Get your pets travel ready with all the necessary documents.
+            </p>
           </div>
         </div>
       </div>

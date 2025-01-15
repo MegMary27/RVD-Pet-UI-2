@@ -1,0 +1,54 @@
+.container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #4A148C;
+    margin-bottom: 10px;
+  }
+  
+  .clinic-info {
+    background-color: #F3E5F5;
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: left;
+    margin-top: 20px;
+    width: 80%;
+  }
+  
+  h3 {
+    color: #6A1B9A;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .timings,
+  .doctor-availability {
+    margin: 15px 0;
+  }
+  
+  h4 {
+    color: #8E24AA;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 5px 0;
+    color: #4A4A4A;
+  }
+  
+  li::before {
+    content: "• ";
+    color: #8E24AA;
+    font-weight: bold;
+  }
+  

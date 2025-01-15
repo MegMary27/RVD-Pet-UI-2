@@ -1,5 +1,12 @@
+#signin {
+    padding: 60px 20px;
+    background-color: #e3e1e4;
+    background-repeat: no-repeat; /* Prevents the background from repeating */
+    background-size: cover; /* Ensures the background covers the entire section */
+    text-align: center;
+}
 .form-container {
-    background-color: white;
+    background-image: white;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);

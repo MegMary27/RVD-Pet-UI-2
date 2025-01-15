@@ -1,45 +1,66 @@
-.services {
+/* General styling for the services section */
+#services {
     padding: 60px 20px;
-    background: #f8f9fa;
-  }
-  
-  .services .container {
-    max-width: 120px;
-    margin: auto;
+    background-color: #e3e1e4;
+    background-repeat: no-repeat; /* Prevents the background from repeating */
+    background-size: cover; /* Ensures the background covers the entire section */
     text-align: center;
+}
+  
+  #services .container {
+    max-width: 1200px;
+    margin: auto;
   }
   
-  .services h2 {
+  #services h2 {
     color: #6e2594;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 40px;
   }
   
-  .services .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Ensures three columns */
+  /* Flexbox grid layout for the cards */
+  .grid {
+    display: flex;
+    justify-content: space-between;
     gap: 20px;
-    margin-top: 30px;
+    flex-wrap: wrap; /* Ensure responsiveness */
   }
   
-  .services .card {
-    background-color: white;
-    border: 1px solid #ddd;
+  /* Card styles */
+  .card {
+    flex: 1;
+    min-width: 200px; /* Ensures cards don't shrink too small */
+    max-width: 30%;
+    background-color: #5a1c7b;
+    color: #fff;
     padding: 20px;
     border-radius: 10px;
-    transition: box-shadow 0.3s, transform 0.3s;
-    text-align: center; /* Centers content inside cards */
-  }
-  
-  .services .card:hover {
+    text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
+    transition: transform 0.3s, box-shadow 0.3s;
   }
   
-  .services .service-image {
-    width: 100%; /* Ensures the image spans the card width */
-    max-height: 200px; /* Limits image height */
-    object-fit: cover; /* Ensures the image retains proportions */
-    border-radius: 10px; /* Matches the card's rounded corners */
-    margin-bottom: 15px; /* Adds spacing between image and text */
+  /* Hover effects for the cards */
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Icon styling */
+  .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #ffdd59;
+  }
+  
+  /* Heading and paragraph styling within the cards */
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    line-height: 1.5;
   }
   

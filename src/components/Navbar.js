@@ -9,8 +9,7 @@ function Navbar() {
       <Link to="/about" style={linkStyle}>About Us</Link>
       <Link to="/appointment" style={linkStyle}>Make Appointment</Link>
       <Link to="/services" style={linkStyle}>Services</Link>
-      <Link to="/food" style={linkStyle}>Food & Accessories</Link>
-      <Link to="/location" style={linkStyle}>Location & Hours</Link>
+      <Link to="/food" style={linkStyle}>Contact Us</Link>
     </nav>
   );
 }

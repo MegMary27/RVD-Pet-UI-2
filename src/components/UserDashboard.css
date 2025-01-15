@@ -1,0 +1,84 @@
+/* Dashboard Container */
+.dashboard-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .dashboard-container h2 {
+    font-size: 28px;
+    color: #2a0a36;
+    margin-bottom: 20px;
+  }
+  
+  /* Horizontal Layout for Dashboard Content */
+  .dashboard-content-horizontal {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .dashboard-section {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .dashboard-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #3f0079;
+  }
+  
+  /* Appointment Form Styles */
+  .appointment-form,
+  .pet-details-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .appointment-form label,
+  .pet-details-form label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .appointment-form select,
+  .appointment-form input,
+  .pet-details-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .appointment-form button,
+  .pet-details-form button {
+    padding: 10px;
+    background-color: #513074;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .appointment-form button:hover,
+  .pet-details-form button:hover {
+    background-color: #381e6c82;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .dashboard-content-horizontal {
+      flex-direction: column;
+    }
+  }

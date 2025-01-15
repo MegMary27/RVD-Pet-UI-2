@@ -1,11 +1,29 @@
 import React from 'react';
+import './FoodAndAccessories.css';
 
 function FoodAndAccessories() {
   return (
     <section id="food">
       <div className="container">
-        <h2>Food & Accessories</h2>
-        <p>Shop premium food and accessories for your pets.</p>
+        <h2>Contact Us</h2>
+        <p>Timings</p>
+        <div className="clinic-info">
+          <h3>RVD Pet Clinic</h3>
+          <div className="timings">
+            <h4>Timings:</h4>
+            <ul>
+              <li>Monday to Saturday: 9:00 am to 2:00 pm, 4:30 pm to 9:00 pm</li>
+              <li>Sunday: 9:00 am to 2:00 pm</li>
+            </ul>
+          </div>
+          <div className="doctor-availability">
+            <h4>Doctor Availability:</h4>
+            <ul>
+              <li>Monday to Saturday: 4:30 pm to 9:00 pm</li>
+              <li>Sunday: 9:00 am to 2:00 pm</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   );
