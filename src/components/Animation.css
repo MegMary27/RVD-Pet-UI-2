@@ -1,0 +1,50 @@
+/* Animation.css */
+
+/* Container for the animation */
+.animation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0; /* Light background color for contrast */
+  overflow: hidden;
+  position: relative;
+}
+
+/* The pawprint image */
+.pawprint {
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: bounce 2s ease-in-out;
+}
+
+/* Fade-out effect */
+.fade-out {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+  
