@@ -102,6 +102,7 @@ const UserDashboard = () => {
     }
   };
 
+  
   return (
     <div className="dashboard">
       <h2>Welcome, {user?.email}</h2>

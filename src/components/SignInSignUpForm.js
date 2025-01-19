@@ -18,79 +18,39 @@ function SignInSignUpForm() {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-  
+
+    // Create a new user in the Supabase authentication system
     const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
       email,
       password,
-      options: { data: { full_name: fullName } },
+      options: {
+        data: { full_name: fullName }, // Save full name in user metadata
+      },
     });
-  
+
     if (signUpError) {
-      setMessage(signUpError.message);
-      return;
-    }
-  
-    if (signUpData.user) {
-      // Insert user into the custom users table
-      const { error: insertError } = await supabase.from('users').insert({
-        id: signUpData.user.id,
-        email: signUpData.user.email,
-        full_name: fullName,
-      });
-  
-      if (insertError) {
-        setMessage(insertError.message);
-      } else {
-        setMessage('Sign-up successful! Confirmation email sent.');
-      }
+      setMessage(`Error during sign-up: ${signUpError.message}`);
+    } else if (signUpData.user) {
+      setMessage('Sign-up successful! Please check your email for confirmation.');
     }
   };
-  
 
   const handleSignIn = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
-    email,
-    password,
-  });
+    // Sign in using email and password
+    const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
 
-  if (signInError) {
-    setMessage(signInError.message);
-    return;
-  }
-
-  if (signInData.user) {
-    // Check if user exists in users table
-    const { data: userData, error: fetchError } = await supabase
-      .from('users')
-      .select('*')
-      .eq('id', signInData.user.id);
-
-    if (fetchError) {
-      setMessage(fetchError.message);
-      return;
+    if (signInError) {
+      setMessage(`Error during sign-in: ${signInError.message}`);
+    } else if (signInData.user) {
+      setMessage('Sign-in successful!');
+      navigate('/dashboard');
     }
-
-    if (!userData.length) {
-      // If user doesn't exist in users, insert them
-      const { error: insertError } = await supabase.from('users').insert({
-        id: signInData.user.id,
-        email: signInData.user.email,
-        full_name: signInData.user.user_metadata?.full_name || null,
-      });
-
-      if (insertError) {
-        setMessage(insertError.message);
-        return;
-      }
-    }
-
-    setMessage('Successfully signed in.');
-    navigate('/dashboard');
-  }
-};
-
+  };
 
   return (
     <section id="signin">
@@ -99,7 +59,13 @@ function SignInSignUpForm() {
         <div className="form-container">
           {formType === 'signin' && (
             <form onSubmit={handleSignIn}>
-              <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
               <input
                 type="password"
                 placeholder="Password"
@@ -125,7 +91,13 @@ function SignInSignUpForm() {
                 onChange={(e) => setFullName(e.target.value)}
                 required
               />
-              <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
               <input
                 type="password"
                 placeholder="Password"
