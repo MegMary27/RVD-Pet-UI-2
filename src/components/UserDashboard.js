@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from './supabaseClient';
-import './UserDashboard.css';
+import { supabase } from './supabaseClient'; // Replace with your Supabase configuration file
+import './UserDashboard.css'; // Make sure to link the CSS file
 
 const UserDashboard = () => {
   const [appointments, setAppointments] = useState([]);
@@ -51,38 +51,29 @@ const UserDashboard = () => {
     else setPets(data);
   };
 
-  useEffect(() => {
-    if (user) {
-      fetchAppointments();
-      fetchPets();
-    }
-  }, [user]);
-
   const handleAddPet = async (e) => {
     e.preventDefault();
-  
     if (!user) {
       setMessage('You must be signed in to add pets.');
       return;
     }
-  
+
     const formData = new FormData(e.target);
     const petData = {
       pet_name: formData.get('pet_name'),
       pet_breed: formData.get('pet_breed'),
       pet_age: formData.get('pet_age'),
-      user_id: user.id, // Make sure this matches the logged-in user's ID.
+      user_id: user.id,
     };
-  
+
     const { error } = await supabase.from('pets').insert(petData);
     if (error) {
       setMessage(`Error: ${error.message}`);
-
     } else {
       setMessage('Pet added successfully!');
-      fetchPets(); // Refresh pet list
+      fetchPets();
     }
-  };  
+  };
 
   const handleAddAppointment = async (e) => {
     e.preventDefault();
@@ -102,16 +93,33 @@ const UserDashboard = () => {
     }
   };
 
-  
+  useEffect(() => {
+    if (user) {
+      fetchAppointments();
+      fetchPets();
+    }
+  }, [user]);
+
   return (
-    <div className="dashboard">
-      <h2>Welcome, {user?.email}</h2>
+    <div className="dashboard-container">
+      <h1>Welcome, {user?.email}</h1>
       <h2>User Dashboard</h2>
-      <button onClick={() => setFormType('addPet')}>Add Pet</button>
-      <button onClick={() => setFormType('addAppointment')}>Make Appointment</button>
-      <button onClick={() => setFormType('history')}>View History</button>
+      <div className="dashboard-cards">
+        <div className="dashboard-card" onClick={() => setFormType('addPet')}>
+          <h3>Add Pet</h3>
+          <p>Add your pet's details.</p>
+        </div>
+        <div className="dashboard-card" onClick={() => setFormType('addAppointment')}>
+          <h3>Make Appointment</h3>
+          <p>Schedule an appointment for your pet.</p>
+        </div>
+        <div className="dashboard-card" onClick={() => setFormType('history')}>
+          <h3>View History</h3>
+          <p>See your past activities.</p>
+        </div>
+      </div>
       {formType === 'addPet' && (
-        <form onSubmit={handleAddPet}>
+        <form onSubmit={handleAddPet} className="form-container">
           <input type="text" name="pet_name" placeholder="Pet Name" required />
           <input type="text" name="pet_breed" placeholder="Pet Breed" />
           <input type="number" name="pet_age" placeholder="Pet Age" />
@@ -119,7 +127,7 @@ const UserDashboard = () => {
         </form>
       )}
       {formType === 'addAppointment' && (
-        <form onSubmit={handleAddAppointment}>
+        <form onSubmit={handleAddAppointment} className="form-container">
           <input type="text" name="pet_name" placeholder="Pet Name" required />
           <input type="date" name="preferred_date" required />
           <input type="time" name="preferred_time" required />
@@ -146,7 +154,7 @@ const UserDashboard = () => {
           </ul>
         </div>
       )}
-      {message && <p>{message}</p>}
+      {message && <p className="message">{message}</p>}
     </div>
   );
 };
