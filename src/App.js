@@ -1,51 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import { supabase } from './components/supabaseClient';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import SignInSignUpForm from './components/SignInSignUpForm';
 import About from './components/About';
-import AppointmentForm from './components/AppointmentForm';
 import Services from './components/Services';
 import FoodAndAccessories from './components/FoodAndAccessories';
+import UserDashboard from './components/UserDashboard';
 import Footer from './components/Footer';
-import UserDetails from './components/UserDetails'; // Import UserDetails component
-import UserDashboard from './components/UserDashboard'; // Import UserDashboard component
-import Animation from './components/Animation'; // Import renamed Animation component
+import Animation from './components/Animation';
 
 const App = () => {
   const [showAnimation, setShowAnimation] = useState(true);
+  const [session, setSession] = useState(null);
+  const [message, setMessage] = useState('');
 
-  // Hide animation after it completes
-  const handleAnimationComplete = () => {
-    setShowAnimation(false);
-  };
+  useEffect(() => {
+    const fetchSession = async () => {
+      const { data, error } = await supabase.auth.getSession();
+      if (error) console.error('Error fetching session:', error);
+      else setSession(data?.session);
+    };
+
+    fetchSession();
+  }, []);
 
   return (
     <Router>
       <div className="App">
         {showAnimation ? (
-          <Animation onComplete={handleAnimationComplete} />
+          <Animation onComplete={() => setShowAnimation(false)} />
         ) : (
           <>
-            {/* Static Components */}
             <Header />
-            <Navbar />
-
-            {/* Routes for Navigation */}
+            <Navbar user={session?.user} setMessage={setMessage} />
             <Routes>
               <Route path="/" element={<Hero />} />
               <Route path="/signin" element={<SignInSignUpForm />} />
               <Route path="/about" element={<About />} />
-              <Route path="/appointment" element={<AppointmentForm />} />
               <Route path="/services" element={<Services />} />
               <Route path="/food" element={<FoodAndAccessories />} />
-              <Route path="/user-details" element={<UserDetails />} />
-              <Route path="/dashboard" element={<UserDashboard />} />
+              <Route
+                path="/dashboard"
+                element={<UserDashboard message={message} setMessage={setMessage} />}
+              />
             </Routes>
-
-            {/* Footer */}
             <Footer />
           </>
         )}

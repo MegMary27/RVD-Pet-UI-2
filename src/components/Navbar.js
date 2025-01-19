@@ -1,13 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-function Navbar() {
+function Navbar({ user, setMessage }) {
+  const navigate = useNavigate();
+
+  const handleMakeAppointmentClick = () => {
+    if (user) {
+      navigate('/dashboard?formType=addAppointment');
+    } else {
+      setMessage('Sign-in to make an appointment.');
+    }
+  };
+
   return (
     <nav style={navStyle}>
       <Link to="/" style={linkStyle}>Home</Link>
       <Link to="/signin" style={linkStyle}>Sign In</Link>
       <Link to="/about" style={linkStyle}>About Us</Link>
-      <Link to="/appointment" style={linkStyle}>Make Appointment</Link>
+      <a href="#" onClick={handleMakeAppointmentClick} style={linkStyle}>
+        Make Appointment
+      </a>
       <Link to="/services" style={linkStyle}>Services</Link>
       <Link to="/food" style={linkStyle}>Contact Us</Link>
     </nav>
