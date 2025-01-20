@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from './supabaseClient'; // Replace with your Supabase configuration file
-import './UserDashboard.css'; // Make sure to link the CSS file
+import { useLocation } from 'react-router-dom'; // Import useLocation to handle query parameters
+import './UserDashboard.css';
 
 const UserDashboard = () => {
   const [appointments, setAppointments] = useState([]);
@@ -8,6 +9,17 @@ const UserDashboard = () => {
   const [message, setMessage] = useState('');
   const [formType, setFormType] = useState(null);
   const [user, setUser] = useState(null);
+
+  const location = useLocation(); // Hook to access the URL
+  const queryParams = new URLSearchParams(location.search);
+  const initialFormType = queryParams.get('formType'); // Get 'formType' from URL
+
+  useEffect(() => {
+    // Automatically set formType based on the query parameter
+    if (initialFormType) {
+      setFormType(initialFormType);
+    }
+  }, [initialFormType]);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -160,3 +172,4 @@ const UserDashboard = () => {
 };
 
 export default UserDashboard;
+
