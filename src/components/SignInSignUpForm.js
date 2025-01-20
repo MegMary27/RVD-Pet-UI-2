@@ -52,7 +52,12 @@ function SignInSignUpForm() {
         setMessage('Please verify your email before signing in.');
       } else {
         setMessage('Sign-in successful!');
-        navigate('/dashboard');
+        // Redirect based on email
+        if (email === 'rvdpetclinic@gmail.com') {
+          navigate('/doctor-dashboard'); // Redirect to DoctorDashboard for the doctor
+        } else {
+          navigate('/dashboard'); // Redirect to UserDashboard for regular users
+        }
       }
     }
   };
