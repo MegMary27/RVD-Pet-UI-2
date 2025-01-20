@@ -19,26 +19,27 @@ function SignInSignUpForm() {
   const handleSignUp = async (e) => {
     e.preventDefault();
 
-    // Create a new user in the Supabase authentication system
     const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
       email,
       password,
       options: {
-        data: { full_name: fullName }, // Save full name in user metadata
+        data: { full_name: fullName },
+        emailRedirectTo: `${window.location.origin}/signin`,
       },
     });
 
     if (signUpError) {
       setMessage(`Error during sign-up: ${signUpError.message}`);
-    } else if (signUpData.user) {
-      setMessage('Sign-up successful! Please check your email for confirmation.');
+    } else {
+      setMessage(
+        'Sign-up successful! A confirmation email has been sent to your email address. Please verify to complete registration.'
+      );
     }
   };
 
   const handleSignIn = async (e) => {
     e.preventDefault();
 
-    // Sign in using email and password
     const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -47,8 +48,12 @@ function SignInSignUpForm() {
     if (signInError) {
       setMessage(`Error during sign-in: ${signInError.message}`);
     } else if (signInData.user) {
-      setMessage('Sign-in successful!');
-      navigate('/dashboard');
+      if (!signInData.user.email_confirmed_at) {
+        setMessage('Please verify your email before signing in.');
+      } else {
+        setMessage('Sign-in successful!');
+        navigate('/dashboard');
+      }
     }
   };
 
@@ -82,6 +87,7 @@ function SignInSignUpForm() {
               </p>
             </form>
           )}
+
           {formType === 'signup' && (
             <form onSubmit={handleSignUp}>
               <input
@@ -106,6 +112,12 @@ function SignInSignUpForm() {
                 required
               />
               <button type="submit">Sign Up</button>
+              <p>
+                Already have an account?{' '}
+                <a href="#" onClick={() => toggleForm('signin')}>
+                  Sign In
+                </a>
+              </p>
             </form>
           )}
         </div>
