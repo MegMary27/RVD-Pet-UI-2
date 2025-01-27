@@ -9,7 +9,7 @@ function Header() {
         justifyContent: 'center',
         backgroundColor: '#6e2594',
         color: 'white',
-        padding: '10px 0',
+        padding: '35px 0',
       }}
     >
       
