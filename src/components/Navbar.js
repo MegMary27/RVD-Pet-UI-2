@@ -17,9 +17,7 @@ function Navbar({ user, setMessage }) {
       <Link to="/" style={linkStyle}>Home</Link>
       <Link to="/signin" style={linkStyle}>Sign In</Link>
       <Link to="/about" style={linkStyle}>About Us</Link>
-      <a href="#" onClick={handleMakeAppointmentClick} style={linkStyle}>
-        Make Appointment
-      </a>
+      
       <Link to="/services" style={linkStyle}>Services</Link>
       <Link to="/food" style={linkStyle}>Contact Us</Link>
     </nav>
