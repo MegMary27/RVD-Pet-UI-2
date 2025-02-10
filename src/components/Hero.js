@@ -6,8 +6,8 @@ function Hero() {
   const navigate = useNavigate(); // Initialize the useNavigate hook
 
   const handleBookAppointmentClick = () => {
-    // Navigate to the UserDashboard page with the Add Appointment form open
-    navigate('/dashboard?formType=addAppointment');
+    // Navigate to the SignIn/SignUp page
+    navigate('./signin'); // Change this to your actual route for SignIn/SignUp
   };
 
   return (
@@ -22,4 +22,3 @@ function Hero() {
 }
 
 export default Hero;
-
