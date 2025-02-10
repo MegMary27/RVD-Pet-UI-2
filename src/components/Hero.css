@@ -19,7 +19,7 @@
 
 @keyframes slideshow {
   0% {
-    background-image: url('../assets/dog1.jpg');
+    background-image: url('../assets/smalldog.jpg');
   }
   25% {
     background-image: url('../assets/dog2.jpg');
@@ -28,10 +28,10 @@
     background-image: url('../assets/pets.webp');
   }
   75% {
-    background-image: url('../assets/dodandcat.webp'); /* New fourth image */
+    background-image: url('../assets/cat doctor.jpg'); /* New fourth image */
   }
   100% {
-    background-image: url('../assets/dog1.jpg'); /* Loop back to the first image */
+    background-image: url('../assets/smalldog.jpg'); /* Loop back to the first image */
   }
 }
 
