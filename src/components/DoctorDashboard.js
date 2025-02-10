@@ -7,7 +7,7 @@ function DoctorsDashboard() {
   const [pets, setPets] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+    
   // Fetch appointments and pets
   useEffect(() => {
     const fetchData = async () => {
@@ -107,7 +107,6 @@ function DoctorsDashboard() {
                     <th>Pet Name</th>
                     <th>Breed</th>
                     <th>Age</th>
-                    <th>Owner Email</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -116,7 +115,6 @@ function DoctorsDashboard() {
                       <td>{pet.pet_name}</td>
                       <td>{pet.pet_breed}</td>
                       <td>{pet.pet_age}</td>
-                      <td>{pet.owner_email}</td>
                     </tr>
                   ))}
                 </tbody>
