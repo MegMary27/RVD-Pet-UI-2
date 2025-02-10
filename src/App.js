@@ -42,7 +42,6 @@ const App = () => {
           <Route path="/" element={<Hero />} />
           <Route path="/signin" element={<SignInSignUpForm />} />
           <Route path="/about" element={<About />} />
-          <Route path="/dashboard" element={<UserDashboard />} />
           <Route path="/services" element={<Services />} />
           <Route path="/food" element={<FoodAndAccessories />} />
           {session?.user?.email === 'meghna.p@btech.christuniversity.in' ? (
