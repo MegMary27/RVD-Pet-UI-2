@@ -6,7 +6,6 @@ function FoodAndAccessories() {
     <section id="food">
       <div className="container">
         <h2>Contact Us</h2>
-        <p>Timings</p>
         <div className="clinic-info">
           <h3>RVD Pet Clinic</h3>
           <div className="timings">
