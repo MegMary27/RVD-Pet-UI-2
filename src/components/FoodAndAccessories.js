@@ -8,6 +8,11 @@ function FoodAndAccessories() {
         <h2>Contact Us</h2>
         <div className="clinic-info">
           <h3>RVD Pet Clinic</h3>
+          <div className="contact-info">
+            <p>Email: rvdpetclinic@gmail.com</p>
+            <p>Phone: +91 7019351472
+            </p>
+          </div>
           <div className="timings">
             <h4>Timings:</h4>
             <ul>
