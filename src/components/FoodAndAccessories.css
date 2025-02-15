@@ -18,7 +18,18 @@
     margin-top: 20px;
     width: 80%;
   }
-  
+  /* Contact Info Styling */
+.contact-info {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  color: #6A1B9A;
+  font-weight: bold;
+}
+
   h3 {
     color: #6A1B9A;
     margin-bottom: 10px;
