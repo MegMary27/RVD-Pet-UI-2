@@ -53,7 +53,7 @@ function SignInSignUpForm() {
       } else {
         setMessage('Sign-in successful!');
         // Redirect based on email
-        if (email === 'meghna.p@btech.christuniversity.in') {
+        if (email === 'rvdpetclinic@gmail.com') {
           navigate('/doctor-dashboard'); // Redirect to DoctorDashboard for the doctor
         } else {
           navigate('/dashboard'); // Redirect to UserDashboard for regular users
