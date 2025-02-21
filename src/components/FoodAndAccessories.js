@@ -17,14 +17,14 @@ function FoodAndAccessories() {
             <h4>Timings:</h4>
             <ul>
               <li>Monday to Saturday: 9:00 am to 2:00 pm, 4:30 pm to 9:00 pm</li>
-              <li>Sunday: 9:00 am to 2:00 pm</li>
+              <li>Sundays and Holidays: 9:00 am to 2:00 pm</li>
             </ul>
           </div>
           <div className="doctor-availability">
             <h4>Doctor Availability:</h4>
             <ul>
               <li>Monday to Saturday: 4:30 pm to 9:00 pm</li>
-              <li>Sunday: 9:00 am to 2:00 pm</li>
+              <li>Sundays and Holidays: 9:00 am to 2:00 pm</li>
             </ul>
           </div>
         </div>
