@@ -45,7 +45,7 @@ const App = () => {
           <Route path="/dashboard" element={<UserDashboard />} />
           <Route path="/services" element={<Services />} />
           <Route path="/food" element={<FoodAndAccessories />} />
-          {session?.user?.email === 'meghna.p@btech.christuniversity.in' ? (
+          {session?.user?.email === 'rvdpetclinic@gmail.com' ? (
             <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
           ) : (
             <Route
