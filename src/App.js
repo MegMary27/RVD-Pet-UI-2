@@ -10,7 +10,7 @@ import About from './components/About';
 import Services from './components/Services';
 import FoodAndAccessories from './components/FoodAndAccessories';
 import UserDashboard from './components/UserDashboard';
-import DoctorsDashboard from './components/DoctorDashboard'; // Import new dashboard
+import DoctorDashboard from './components/DoctorDashboard'; // Import new dashboard
 import Footer from './components/Footer';
 import Animation from './components/Animation';
 
@@ -46,7 +46,7 @@ const App = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/food" element={<FoodAndAccessories />} />
           {session?.user?.email === 'meghna.p@btech.christuniversity.in' ? (
-            <Route path="/doctor-dashboard" element={<DoctorsDashboard />} />
+            <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
           ) : (
             <Route
               path="/dashboard"
