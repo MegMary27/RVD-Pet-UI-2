@@ -55,7 +55,16 @@
   margin: 10px 0;
   color: #333;
 }
-
+.doctor-section h4 {
+  font-size: 1.03rem;
+  margin: 10px 0;
+  color: #333;
+}
+.doctor-section h5 {
+  font-size: 1.03rem;
+  margin: 10px 0;
+  color: #333;
+}
 .doctor-section p {
   font-size: 1rem;
   color: #555;
