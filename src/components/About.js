@@ -39,6 +39,8 @@ function About() {
         <div className="doctor-section">
           <img className="doctor-image" src={doctorImage} alt="Doctor" />
           <h3>Dr. Kumar Swamy</h3>
+          <h4>M.V.Sc (Surgery)</h4>
+          <h5>PGCVH</h5>
           <p>
             Dr. Kumar Swamy is a highly experienced veterinarian passionate about
             animal care. With over 15 years of experience, he specializes in
